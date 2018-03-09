@@ -24,8 +24,7 @@ myMonth.addEventListener('change', () => {
 	dayOptions = '<option>Day</option>'
 
 	for (let day = startDay; day <= endDay; day++) {
-		let addon = '<option>' + day + '</option>'
-		dayOptions = dayOptions.concat(addon)
+		dayOptions += `<option>${day}</option>`
 	}
 
 	myDay.innerHTML = dayOptions
@@ -33,7 +32,7 @@ myMonth.addEventListener('change', () => {
 
 myYear.addEventListener('change', function() {
 	if (isLeapYear() && dayOptions.substring(dayOptions.length-11, dayOptions.length-9) != '29') {
-		dayOptions = dayOptions.concat('<option>29</option>')
+		dayOptions += '<option>29</option>'
 		myDay.innerHTML = dayOptions
 	}
 

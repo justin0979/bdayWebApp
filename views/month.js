@@ -10,8 +10,7 @@ let monthNames = [
 				]
 
 for (let m = startMonth; m <= endMonth; m++) {
-	let addon = '<option>' + m + monthNames[m] + '</option>'
-	monthOptions = monthOptions.concat(addon)
+	monthOptions += `<option>${m+monthNames[m]}</option>`
 }
 
 let myMonth = document.querySelector('#month')

@@ -1,11 +1,10 @@
 ;
-let startYear = 1900
+let startYear = 100
 let endYear = new Date().getFullYear()
 let yearOptions = '<option>Year</option>'
 
 for (let year = endYear; year >= startYear; year--) {
-	addon = '<option>' + year + '</option>'
-	yearOptions = yearOptions.concat(addon)
+	yearOptions += `<option>${year}</option>`
 }
 
 let myYear = document.querySelector('#year')
