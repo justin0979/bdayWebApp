@@ -52,6 +52,8 @@ let work = () => {
 let startOutput = () => {
 
 //	this starts the css animation once a year/month/day is selected
+	cir.classList.remove('underline')
+	cir.classList.remove('error')
 	cir.innerHTML = ''
 	answer.innerHTML = 'Calculating'
 	cir.classList.add('loader')	

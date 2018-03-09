@@ -24,6 +24,7 @@ h1 {
 	animation: line 1s 0s ease-in-out 1 forwards;
 	margin-top: 5px; 
 	margin-bottom: 30px;
+/*	padding-bottom: 50px; /* makes a smile underline */
 	border-radius: 50%;
 }
 
