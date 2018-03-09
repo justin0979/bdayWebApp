@@ -1,0 +1,117 @@
+body {
+	background-image: url("https://static.pexels.com/photos/414513/pexels-photo-414513.jpeg");
+}
+
+h1 {
+	color: darkblue;
+}
+
+#container {
+	margin: 5% 15% 15% 15%;	
+	align-items: center;
+	justify-content: center;
+	height: 70%;
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(162,162,162,.8);
+	align-text: flex-end;
+}
+
+#btnDiv {
+	padding-top: 40px;
+	height: 50px;
+	transform: translateX(15px);
+}
+
+#b {
+	color: white;
+	background-color: darkturquoise;
+	font-size: 25px;
+	height:100%;
+	width: 100%;
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	position: relative;
+	box-shadow: 0 6px gray;
+}
+
+#b:hover {box-shadow: 0 4px gray; top: 2px; background-color: turquoise;
+		  animation: morph 3s 1s ease-in-out infinite;}
+#b:active {box-shadow: 0 0 gray; top: 6px; background-color: cyan;}
+
+#answer {
+	text-align: center;
+	color: springgreen;
+}
+
+.d, .box{
+	height: 100px;
+	width: 400px;
+}
+
+.box {
+	text-align: center;
+	width: 500px;
+}
+
+.margin {
+	margin: 2%;
+	font-size: 1.4em;
+}
+
+.menus {
+	height: 2.5em;
+	width: 25em;
+	display: flex;
+	justify-content: space-around;
+}
+
+.sel {
+	height: 100%;
+	width: 300px;
+	text-align-last: center;
+	background-color: springgreen;
+	box-shadow: 0 6px gray;
+	position: relative;
+	outline: none;
+	border: none;
+	border-radius: 10px;
+}
+
+.sel:hover {
+	background-color: mediumspringgreen; 
+	border-radius-bottom: 0px;
+	box-shadow: 0 4px gray; 
+	top: 2px; 
+	animation: morphSel 3s 0s ease-in-out infinite;
+}
+
+@keyframes morph {
+	0% {height: 50px; width: 500px;	}
+	50% {height: 60px; width 100px; border-radius: 50%;}
+	100% {height: 50px; width: 500px; }
+}
+
+@keyframes morphSel {
+	0% {border-top-left-radius: 0%; border-top-right-radius: 0%;}
+	33% {border-top-left-radius: 55%;}
+	66% {border-top-left-radius: 0%; border-top-right-radius: 65%}
+	100% {border-top-left-radius: 0%; border-top-right-radius: 0%;}
+}
+
+@media screen and (max-width: 900px) {
+	#selectors {
+		height: 80%; 
+		width: 80%; 
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	#btnDiv {
+		width: 80%;
+		height: 110%;
+	}
+}
