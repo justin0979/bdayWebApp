@@ -1,5 +1,6 @@
 ;
 let arr = []
+let cir = document.querySelector('#circle')
 let answer = document.querySelector('#answer')
 let newClick = document.querySelectorAll('.date')
 let calculating = true;
@@ -14,8 +15,13 @@ button.addEventListener('click',function() {
 	calculating = false
 	
 	if(dayOfWeek[h] == undefined) {
+		cir.classList.remove('loader')
+		cir.innerHTML = 'X'
+		cir.classList.add('error')
 		answer.innerHTML = "That's not a date."
 	} else {
+		cir.classList.remove('loader')
+		cir.classList.add('underline')
 		answer.innerHTML = '<strong>That date falls on a <h1>' + dayOfWeek[h] + '</h2></strong>'
 		console.log('month =',person.month,'day =',person.day,'year =',person.year)
 	}
@@ -44,11 +50,18 @@ let work = () => {
 }
 
 let startOutput = () => {
-	interval = setInterval(function() {
+
+//	this starts the css animation once a year/month/day is selected
+	cir.innerHTML = ''
+	answer.innerHTML = 'Calculating'
+	cir.classList.add('loader')	
+/*
+interval = setInterval(function() {
 		answer.innerHTML = 'Calculating Date' + dots[counter++]
 		if(counter > 3) {
 			counter = 0
 		}
 	}, speed)
 	x.push(interval)
+*/
 }
