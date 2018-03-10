@@ -1,3 +1,7 @@
+// Algorithm is taken from "https://en.wikipedia.org/wiki/Zelleri%27s_congruence".
+// Person object, year, month, and day are from person.js, year.js, month.js, and
+// day.js respectively.
+
 ;
 let button = document.querySelector('button')
 let dayOfWeek = ['Saturday', 'Sunday', 'Monday', 'Tuesday',	'Wednesday', 'Thursday', 'Friday']
