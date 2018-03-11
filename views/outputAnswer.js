@@ -1,10 +1,18 @@
+// BUG:  If attempting to set a subsequent date, the previous input data will
+//		 still be in the person object. Will need to implement a new person
+//		 object in order to give impression of new person entering data.
+//		 The minor issue only occurs if a subsequent month is input, then the day
+//		 selector will display 'Day', even though the person.day still holds the
+//		 previous input data (also, with differing years, the day menu does as 
+// 		 described above).
+//       As a possible fix, might add an anchor tag to the html file to reset object.
 ;
 let arr = []
 let cir = document.querySelector('#circle')
 let answer = document.querySelector('#answer')
 let newClick = document.querySelectorAll('.date')
 let calculating = true;
-let dots = [' ', '.', '..', '...']
+let dots = [' ', '.', '..', '...'] // array used to commented out code at eof.
 let counter = 0,
 	speed = 1000,
 	interval,
@@ -26,26 +34,25 @@ button.addEventListener('click',function() {
 		cir.classList.add('underline')
 		answer.innerHTML = '<strong>That date falls on a <h1>' + dayOfWeek[h] + '</h2></strong>'
 		console.log('month =',person.month,'day =',person.day,'year =',person.year)
+/*
 		person.month = undefined
 		person.day = undefined
 		person.year = undefined
+*/
 	}
 	x.forEach(ele => clearInterval(ele))
 	x.length = 0
 	calculating = true
 })
 
-newClick[0].addEventListener('change', () => {
-	work()
-})
+// year menu
+newClick[0].addEventListener('change', () => work())
 
-newClick[1].addEventListener('change', () => {
-	work()
-})
+// month menu
+newClick[1].addEventListener('change', () => work())
 
-newClick[2].addEventListener('change', () => {
-	work()
-})
+// day menu
+newClick[2].addEventListener('change', () => work())
 
 let work = () => {
 	if(calculating) {
@@ -56,16 +63,16 @@ let work = () => {
 
 let startOutput = () => {
 
-//	this starts the css animation once a year/month/day is selected
+	//	this starts the css animation once a year/month/day is selected
 	cir.classList.remove('underline')
 	cir.classList.remove('error')
 	cir.innerHTML = ''
 	answer.innerHTML = 'Calculating'
 	cir.classList.add('loader')	
 /*
-	// This commented out code displays a series of dots instead of the loading circle.
-	// It is not worth looking at, just keeping it here in case the need for such code 
-	// is needed for a command line display.
+	// This commented out code displays a series of dots instead of the loading circle
+	// It is not worth looking at, just keeping it here for review
+	
 	interval = setInterval(function() {
 		answer.innerHTML = 'Calculating Date' + dots[counter++]
 		if(counter > 3) {

@@ -31,7 +31,7 @@ myMonth.addEventListener('change', () => {
 })
 
 myYear.addEventListener('change', function() {
-	if (isLeapYear() && dayOptions.substring(dayOptions.length-11, dayOptions.length-9) != '29') {
+	if (isLeapYear() && person.month == 2 && dayOptions.substring(dayOptions.length-11, dayOptions.length-9) != '29') {
 		dayOptions += '<option>29</option>'
 		myDay.innerHTML = dayOptions
 	}
