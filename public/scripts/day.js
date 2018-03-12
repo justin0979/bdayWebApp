@@ -1,8 +1,11 @@
-;
-let startDay = 01;
-let endDay = 31;
-let dayOptions = '<option>Day</option>'
-let myDay = document.querySelector('#day')
+// This portion sets person.day to the user's specified day & sets day menu.
+// The month and year will adjust the endDay data since months
+// have differing amounts of days and leap years modify February.
+
+let startDay = 01,
+	endDay = 31,
+    dayOptions = '<option>Day</option>',
+    myDay = document.querySelector('#day')
 
 myMonth.addEventListener('change', () => {
 	// if month is feb and non-learpyear
@@ -37,15 +40,18 @@ myYear.addEventListener('change', function() {
 	}
 
 	// if statement removes '29' from non-leap years that selected February.
-	// '29' occurs more than once if this statement is not here and the user selected a leap
-	// year and then changed their mind and changed the year to a non-leap year but kept February.
-	// Without this code, then after the change, February would still show '29' as an option.
+	// '29' occurs more than once if this statement is not here and the user selected
+	// a leap year and then changed their mind and changed the year to a non-leap year
+	// but kept February.
+	// Without this code, then after the change, February would still show '29' as an
+	// option.
 	if(!isLeapYear() && dayOptions.substring(dayOptions.length-11, dayOptions.length-9) == '29') {
 		dayOptions = dayOptions.substring(0, dayOptions.length - 19)
 		myDay.innerHTML = dayOptions;
 	}
 })
 
+// Sets person.day to user specified day.
 myDay.addEventListener('change', () => {
 	person.day = parseInt(myDay.value)
 })

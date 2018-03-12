@@ -1,3 +1,6 @@
+// This portion outputs the calculated day to the screen. CSS loading animations 
+// are initiated when data is input and continue throughout the program.
+
 // BUG:  If attempting to set a subsequent date, the previous input data will
 //		 still be in the person object. Will need to implement a new person
 //		 object in order to give impression of new person entering data.
@@ -6,13 +9,13 @@
 //		 previous input data (also, with differing years, the day menu does as 
 // 		 described above).
 //       As a possible fix, might add an anchor tag to the html file to reset object.
-;
-let arr = []
+
+let arr = [] // not yet implemented
 let cir = document.querySelector('#circle')
 let answer = document.querySelector('#answer')
 let newClick = document.querySelectorAll('.date')
 let calculating = true;
-let dots = [' ', '.', '..', '...'] // array used to commented out code at eof.
+// let dots = [' ', '.', '..', '...'] // array used to commented out code at eof.
 let counter = 0,
 	speed = 1000,
 	interval,
@@ -54,12 +57,30 @@ newClick[1].addEventListener('change', () => work())
 // day menu
 newClick[2].addEventListener('change', () => work())
 
+/************************ work() ***************************************
+
+	Purpose: Determines a day, month or year has already been selected.
+			 If so, then program 'knows' that CSS animations already started.
+			 Otherwise, the loading animations start.
+			 Originally work() was used for dots array since setInterval() 
+			 controlled the output of dots; however, after using CSS, the dots
+			 were no longer needed. The code for setInterval use remains commented
+			 out in the last half of startOutput().
+
+*/
+
 let work = () => {
 	if(calculating) {
 		startOutput()
 	}
 	calculating = false
 }
+
+/************************** startOutput() *********************************
+
+	Purpose:  Initiates CSS loading animations.
+
+*/
 
 let startOutput = () => {
 
