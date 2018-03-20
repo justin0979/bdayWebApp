@@ -1,8 +1,10 @@
+"use strict"
+
 // This portion sets person.day to the user's specified day & sets day menu.
 // The month and year will adjust the endDay data since months
 // have differing amounts of days and leap years modify February.
 
-let startDay = 01,
+let startDay = 1,
 	endDay = 31,
     dayOptions = '<option>Day</option>',
     myDay = document.querySelector('#day')

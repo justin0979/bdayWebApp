@@ -1,3 +1,5 @@
+"use strict"
+
 // This portion outputs the calculated day to the screen. CSS loading animations 
 // are initiated when data is input and continue throughout the program.
 

@@ -1,3 +1,5 @@
+'use strict'
+
 // This portion stores person.month as user specified month & sets the month menu.
 
 let startMonth = 1,

@@ -1,3 +1,5 @@
+'use strict'
+
 // Algorithm is taken from "https://en.wikipedia.org/wiki/Zeller%27s_congruence".
 // Person object (year, month, and day) are set it person.js, year.js, month.js, and
 // day.js respectively.

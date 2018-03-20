@@ -1,10 +1,12 @@
+'use strict'
+
 // This portion sets person.year to user specified input & sets years in menu.
 
 let startYear = 100,
     endYear = new Date().getFullYear(), // Ends at current year since app is for 
 										// living people old enough to use it.
 										// Can be adjusted to check for future dates.
-    yearOptions = '<option>Year</option>'
+    yearOptions = '<option>Year</option>',
     myYear = document.querySelector('#year')
 
 // Stores yearOptions as long string since html can read it as a single line due to
